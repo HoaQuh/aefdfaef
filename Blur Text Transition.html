@@ -1,0 +1,102 @@
+<html lang="en" class=""><head>
+
+  <meta charset="UTF-8">
+  <title>CodePen Demo</title>
+
+  <meta name="robots" content="noindex">
+
+  <link rel="shortcut icon" type="image/x-icon" href="https://cpwebassets.codepen.io/assets/favicon/favicon-aec34940fbc1a6e787974dcd360f2c6b63348d4b1f4e06c77743096d55480f33.ico">
+  <link rel="mask-icon" href="https://cpwebassets.codepen.io/assets/favicon/logo-pin-8f3771b1072e3c38bd662872f6b673a722f4b3ca2421637d5596661b4e2132cc.svg" color="#111">
+  <link rel="canonical" href="https://codepen.io/nathantaylor/pen/KNQebv">
+
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+<link href="https://fonts.googleapis.com/css?family=Oswald" rel="stylesheet">
+
+  
+
+
+  <style class="INLINE_PEN_STYLESHEET_ID">
+ .blurtext {
+  position: relative;
+  width: 100vw;
+  text-align: center;
+  font-size: 10vw;
+  height: 10vw;
+  text-transform: uppercase;
+  font-family: "Oswald", sans-serif;
+  font-weight: 600;
+  color: #471C1A;
+}
+.blurtext span {
+  position: absolute;
+  display: block;
+  width: 100%;
+  text-align: center;
+  opacity: 0;
+  transform: perspective(100px) translateZ(10px);
+  filter: blur(10px);
+  letter-spacing: 0.1em;
+}
+.blurtext span.active {
+  opacity: 1;
+  transform: perspective(100px) translateZ(0px);
+  filter: blur(0px);
+  letter-spacing: 0.15em;
+  transition: opacity 1000ms linear, transform 1000ms linear, filter 400ms linear, letter-spacing 1000ms linear;
+}
+.blurtext span.past {
+  opacity: 0;
+  transform: perspective(100px) translateZ(-10px);
+  filter: blur(10px);
+  letter-spacing: 0.2em;
+  transition: opacity 1000ms linear, transform 1000ms linear, filter 400ms linear, letter-spacing 1000ms linear;
+}
+
+body {
+  background: #EF303B;
+}
+
+.center {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate3d(-50%, -50%, 0);
+}
+
+.sig {
+  position: fixed;
+  bottom: 5px;
+  right: 5px;
+  text-decoration: none;
+  font-size: 12px;
+  font-weight: 800;
+  font-family: sans-serif;
+  color: rgba(0, 0, 0, 0.4);
+}
+  </style>
+
+  
+
+</head>
+
+<body>
+  
+
+<div class="center">
+  <div class="blurtext"> <span>This </span><span>is</span><span>your</span><span>only</span><span>chance</span></div>
+</div><a class="sig" href="http://nathan.tokyo" target="_blank">NATHAN.TOKYO</a>
+
+<script src="jquery.min.js"></script>
+  <script>
+  setInterval(function(){
+  $('.blurtext span.past').removeClass('past');
+  $('.blurtext span.active').addClass('past').removeClass('active');
+  $('.blurtext span.past + span').addClass('active');
+  if ($('.blurtext span.active').length == 0){
+    $('.blurtext span:nth-child(1)').addClass('active');
+  }
+}, 800);
+  </script>
+
+
+</body></html>

@@ -1,0 +1,60 @@
+<html><head>
+  <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+  <meta name="robots" content="noindex, nofollow">
+  <meta name="googlebot" content="noindex, nofollow">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <style id="compiled-css" type="text/css">
+    .marquee {
+	display: none;
+	}
+    .para {
+      font-weight: bold;
+      white-space: nowrap;
+      clear: both;
+      float: left;
+	  margin: 2px;
+	  pointer-events: none; 
+    }
+  </style>
+</head>
+<body>
+
+<div id="main" class="marquee"><p class="para" id="para1"> Geeksforgeeks | A computer science portal for geeks</p></div>	 
+	
+<br>	<br><br>	<br>	<br>	<br>	<br>	<br>	<br>	<br>	<br>	<br>	<br>	<br>	<br>	<br>	<br>	<br>	<br>	<br>	<br>	<br>	<br>	<br><br>	<br>	<br>	<br>	<br>	<br>	<br>	<br>	<br>	.................<br>	<br>	<br>	<br>	<br>	<br>	<br>	<br>	<br><br>	<br>	<br>	<br>	<br>	<br>	<br>	<br>	<br>	<br>	<br>	<br>	<br>	<br>	<br>	<br>	<br>	<br>	<br>	<br>	<br>	<br>	<br>	<br>	<br>	<br>	<br> <a href="#">**************** *****************</a>	<br>	<br>	<br>	<br>	<br>	<br>	<br>	<br>	<br>	<br>	<br>	<br>	<br>	<br>	<br>	<br>	<br>	<br>	<br>	<br>	<br>	<br>	<br>	<br>	<br>	<br>	<br>	<br>	<br>	<br>	<br>	<br>	<br>	<br>	<br>	<br>	<br>	<br><br>	<br>	<br>	<br>	<br>	<br>	<br>	<br>	<br><br>	<br>	<br>	<br>	<br>	<br>	<br>	<br>	<br><br>	<br>	<br>	<br>	...
+
+<script id="insert">
+
+  
+marquee("para1", 2);
+
+  
+function marquee(idtext, laplai=1, tocdo=10) {
+var elemente = document.getElementById(idtext);
+var idcha = elemente.parentNode.id;  <!-- get ID cha cua ID cho truoc -->
+let elemcha = document.getElementById(idcha);
+elemcha.style.cssText = "border: 1px solid red; background: rgba(0, 0, 0, 0.9); color: #00ff58; width: 80%; overflow: hidden; position: fixed; left: 50%; top: 16%; transform: translateX(-50%); display: block; pointer-events: none;";
+
+    let elementWidth = elemente.offsetWidth;
+    let parentWidth = elemente.parentElement.offsetWidth;
+    let flag = parentWidth;
+let solane = laplai;
+let demsolane = 0;
+
+const chucd = setInterval(() => {
+elemente.style.marginLeft = --flag + "px";
+
+if (elementWidth == -flag) {
+demsolane++;
+if (demsolane >= solane) {
+elemcha.style.cssText = "display: none;";
+    clearInterval(chucd);
+} else {
+    flag = parentWidth;
+}
+}
+    }, tocdo);
+return "";
+}
+    </script>
+			</body></html>
